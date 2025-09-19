@@ -2,12 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PublicLayout from '../layouts/PublicLayout';
 import AdminLayout from '../layouts/AdminLayout';
-
-// Import các trang đã tái cấu trúc
 import ServiceCenterListPage from '../pages/public/ServiceCenterListPage';
 import LoginPage from '../pages/auth/LoginPage';
 import CustomerDashboardPage from '../pages/customer/CustomerDashboardPage';
-
+import ServicesPage from '../pages/public/ServicesPage';
 import { Container, Typography } from '@mui/material'; 
 
 function AppRoutes() {
@@ -20,6 +18,7 @@ function AppRoutes() {
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/centers" element={<ServiceCenterListPage />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Route>
 
       {/* ===== Luồng Customer (sau khi đăng nhập) ===== */}
