@@ -1,0 +1,21 @@
+.loginPage {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4F6F8;
+  }
+  
+  .imageSection {
+    width: 50%;
+    background-image: url('https://vinfast-chevrolet-thanglong.com/wp-content/uploads/2021/04/p-2.jpg'); /* [Suy đoán] Hình ảnh minh họa cho ngành xe điện */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .formSection {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }

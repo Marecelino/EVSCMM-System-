@@ -1,0 +1,24 @@
+[
+    {
+      "vehicle_id": 101,
+      "owner_id": 1,
+      "vin_number": "VIN001XYZ",
+      "license_plate": "51A-123.45",
+      "model": "VF e34",
+      "brand": "VinFast",
+      "year": 2023,
+      "current_mileage": 15000,
+      "battery_health_percentage": 98
+    },
+    {
+      "vehicle_id": 102,
+      "owner_id": 1,
+      "vin_number": "VIN002ABC",
+      "license_plate": "51A-678.90",
+      "model": "VF 8",
+      "brand": "VinFast",
+      "year": 2024,
+      "current_mileage": 5000,
+      "battery_health_percentage": 100
+    }
+  ]

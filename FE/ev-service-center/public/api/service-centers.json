@@ -1,0 +1,20 @@
+[
+    {
+      "center_id": 1,
+      "name": "VinFast Thảo Điền",
+      "address": "12 Quốc Hương, Thảo Điền, TP. Thủ Đức, TP.HCM",
+      "phone_number": "1900 23 23 89"
+    },
+    {
+      "center_id": 2,
+      "name": "VinFast Landmark 81",
+      "address": "720A Điện Biên Phủ, Vinhomes Tân Cảng, Bình Thạnh, TP.HCM",
+      "phone_number": "1900 23 23 89"
+    },
+    {
+      "center_id": 3,
+      "name": "EV Center Quận 7",
+      "address": "456 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, TP.HCM",
+      "phone_number": "1900 23 23 90"
+    }
+  ]

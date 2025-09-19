@@ -1,0 +1,41 @@
+[
+    {
+      "package_id": 1,
+      "name": "Gói Bảo dưỡng Cơ bản",
+      "price": 750000,
+      "duration_months": 6,
+      "description": "Kiểm tra toàn diện các hạng mục thiết yếu, đảm bảo xe vận hành an toàn và ổn định.",
+      "features": [
+        "Kiểm tra hệ thống pin & sạc",
+        "Kiểm tra và vệ sinh hệ thống phanh",
+        "Kiểm tra hệ thống lái",
+        "Cập nhật phần mềm (nếu có)"
+      ]
+    },
+    {
+      "package_id": 2,
+      "name": "Gói Bảo dưỡng Nâng cao",
+      "price": 1500000,
+      "duration_months": 12,
+      "description": "Bao gồm gói Cơ bản và các hạng mục chăm sóc chuyên sâu, giúp tối ưu hiệu suất và tuổi thọ xe.",
+      "features": [
+        "Tất cả các mục trong gói Cơ bản",
+        "Kiểm tra hiệu suất động cơ điện",
+        "Vệ sinh và bảo dưỡng hệ thống điều hòa",
+        "Cân bằng động và chỉnh độ chụm bánh xe"
+      ]
+    },
+    {
+      "package_id": 3,
+      "name": "Gói Chăm sóc Toàn diện",
+      "price": 2500000,
+      "duration_months": 12,
+      "description": "Dịch vụ cao cấp nhất, chăm sóc từng chi tiết trên chiếc xe của bạn.",
+      "features": [
+        "Tất cả các mục trong gói Nâng cao",
+        "Vệ sinh chi tiết nội thất và ngoại thất",
+        "Phủ nano kính lái",
+        "Kiểm tra và bảo dưỡng các cảm biến an toàn"
+      ]
+    }
+  ]

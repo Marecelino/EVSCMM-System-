@@ -1,0 +1,18 @@
+[
+    {
+      "appointment_id": 201,
+      "vehicle_id": 101,
+      "center_name": "VinFast Thảo Điền",
+      "service_type": "Bảo dưỡng định kỳ cấp 1",
+      "appointment_time": "2025-09-20T09:00:00",
+      "status": "completed"
+    },
+    {
+      "appointment_id": 202,
+      "vehicle_id": 102,
+      "center_name": "VinFast Landmark 81",
+      "service_type": "Kiểm tra hệ thống pin",
+      "appointment_time": "2025-10-05T14:00:00",
+      "status": "confirmed"
+    }
+  ]
