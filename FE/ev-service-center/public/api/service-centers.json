@@ -16,5 +16,36 @@
       "name": "EV Center Quận 7",
       "address": "456 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, TP.HCM",
       "phone_number": "1900 23 23 90"
-    }
+    },
+    
+        {
+          "center_id": 4,
+          "name": "VinFast Phú Nhuận",
+          "address": "101 Phan Đăng Lưu, Phường 7, Quận Phú Nhuận, TP.HCM",
+          "phone_number": "1900 23 23 91"
+        },
+        {
+          "center_id": 5,
+          "name": "EV Center Bình Tân",
+          "address": "245 Kinh Dương Vương, An Lạc, Quận Bình Tân, TP.HCM",
+          "phone_number": "1900 23 23 92"
+        },
+        {
+          "center_id": 6,
+          "name": "VinFast Gò Vấp",
+          "address": "789 Quang Trung, Phường 12, Quận Gò Vấp, TP.HCM",
+          "phone_number": "1900 23 23 93"
+        },
+        {
+          "center_id": 7,
+          "name": "EV Center Củ Chi",
+          "address": "32 Tỉnh Lộ 8, Thị trấn Củ Chi, Huyện Củ Chi, TP.HCM",
+          "phone_number": "1900 23 23 94"
+        },
+        {
+          "center_id": 8,
+          "name": "VinFast Nhà Bè",
+          "address": "654 Nguyễn Hữu Thọ, Phước Kiển, Huyện Nhà Bè, TP.HCM",
+          "phone_number": "1900 23 23 95"
+        }
   ]

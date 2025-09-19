@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/apiService';
-import { Box, TextField, Button, Typography, Paper, Alert } from '@mui/material';
+import { Box, TextField, Button, Typography, Paper, Alert, Container } from '@mui/material';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 function LoginPage() {
@@ -15,39 +15,28 @@ function LoginPage() {
     setError('');
     try {
       const response = await login(email, password);
-      // [Suy luận] Trong ứng dụng thật, bạn sẽ lưu token vào localStorage
-      // localStorage.setItem('token', response.data.token);
       alert('Đăng nhập thành công!');
-      navigate('/customer/dashboard'); // Chuyển hướng đến trang dashboard
+      navigate('/customer/dashboard');
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    <Box sx={{ display: 'flex', height: '100vh' }}>
-      {/* Phần hình ảnh bên trái - chỉ hiển thị trên màn hình lớn */}
-      <Box 
-        sx={{ 
-          width: '50%',
-          display: { xs: 'none', md: 'block' },
-          backgroundImage: 'url(https://vinfast-chevrolet-thanglong.com/wp-content/uploads/2021/04/p-2.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      />
-      
-      {/* Phần form đăng nhập bên phải */}
-      <Box 
-        sx={{ 
-          width: { xs: '100%', md: '50%' },
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          p: 4
-        }}
-      >
-        <Paper elevation={6} sx={{ p: 4, width: '100%', maxWidth: 400, borderRadius: 3 }}>
+    // Sử dụng Box với flexbox để căn giữa nội dung theo cả chiều dọc và ngang
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // Đảm bảo chiếm đủ chiều cao còn lại của màn hình (trừ đi Header và Footer)
+        minHeight: 'calc(100vh - 200px)', 
+        py: 4,
+      }}
+    >
+      <Container component="main" maxWidth="xs">
+        <Paper elevation={6} sx={{ p: 4, mt: 4, borderRadius: 3 }}>
           <Box sx={{ textAlign: 'center', mb: 3 }}>
             <DirectionsCarIcon color="primary" sx={{ fontSize: 40 }}/>
             <Typography component="h1" variant="h5">
@@ -90,7 +79,7 @@ function LoginPage() {
             </Button>
           </Box>
         </Paper>
-      </Box>
+      </Container>
     </Box>
   );
 }

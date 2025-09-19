@@ -41,10 +41,14 @@ function ServiceCenterListPage() {
         Tìm trung tâm gần bạn nhất để trải nghiệm dịch vụ chuyên nghiệp của chúng tôi.
       </Typography>
       
-      
-      <Grid container spacing={4}>
+      {/* --- CẬP NHẬT GRID CONTAINER TẠI ĐÂY --- */}
+      <Grid container spacing={4} alignItems="stretch" justifyContent="center">
         {centers.map((center) => (
-          <Grid item key={center.center_id} xs={12} sm={6}>
+          // --- CẬP NHẬT GRID ITEM TẠI ĐÂY ---
+          // xs=12: 1 card/hàng trên mobile
+          // sm=6:  2 card/hàng trên tablet
+          // md=4:  3 card/hàng trên desktop
+          <Grid item key={center.center_id} xs={12} sm={6} md={4}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="h5" component="div" gutterBottom>{center.name}</Typography>

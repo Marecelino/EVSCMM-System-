@@ -12,13 +12,14 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Trang Login không dùng layout chung */}
-      <Route path="/login" element={<LoginPage />} />
+      
 
       {/* ===== Luồng Public ===== */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/centers" element={<ServiceCenterListPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Route>
 
       {/* ===== Luồng Customer (sau khi đăng nhập) ===== */}
