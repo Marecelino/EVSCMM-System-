@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PublicLayout from '../layouts/PublicLayout';
 import AdminLayout from '../layouts/AdminLayout';
+import HomePage from '../pages/public/HomePage'; 
 
 import LoginPage from '../pages/auth/LoginPage';
 import CustomerDashboardPage from '../pages/customer/CustomerDashboardPage';
@@ -41,12 +42,6 @@ function AppRoutes() {
   );
 }
 
-function HomePage() {
-    return (
-        <Container sx={{py: 4}}>
-            <Typography variant="h3">Chào mừng đến với EV Service Center</Typography>
-        </Container>
-    )
-}
+
 
 export default AppRoutes;

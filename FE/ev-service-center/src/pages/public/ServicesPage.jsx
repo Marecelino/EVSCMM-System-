@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getServicePackages } from '../../api/apiService';
 import { Container, Typography, Grid, Card, CardHeader, CardContent, CardActions, Button, Box, CircularProgress, Alert, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 function ServicesPage() {
   const [packages, setPackages] = useState([]);
@@ -11,7 +11,8 @@ function ServicesPage() {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Giả lập độ trễ mạng
+        await new Promise(resolve => setTimeout(resolve, 300));
         const response = await getServicePackages();
         setPackages(response.data);
       } catch (err) {
@@ -31,7 +32,6 @@ function ServicesPage() {
     return <Container sx={{ my: 4 }}><Alert severity="error">{error}</Alert></Container>;
   }
 
-  // === PHẦN GIAO DIỆN ĐƯỢC CẬP NHẬT TỪ ĐÂY ===
   return (
     <Box sx={{ bgcolor: 'background.default', py: 8 }}>
       <Container>
@@ -42,45 +42,38 @@ function ServicesPage() {
           Lựa chọn gói bảo dưỡng phù hợp để đảm bảo chiếc xe điện của bạn luôn ở trạng thái tốt nhất.
         </Typography>
 
-        
-
-        {/* --- Dàn trang lại bằng Grid --- */}
-        {/* alignItems="stretch" sẽ làm cho các card có chiều cao bằng nhau */}
         <Grid container spacing={4} alignItems="stretch">
           {packages.map((pkg) => (
-            // Responsive: 1 card/hàng trên mobile (xs), 3 card/hàng trên desktop (md)
-            <Grid item key={pkg.package_id} xs={12} md={4}>
-              {/* height: '100%' để card lấp đầy Grid item */}
+            <Grid item key={pkg.id} xs={12} md={4}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderTop: `4px solid`, borderColor: 'primary.main' }}>
                 <CardHeader
                   title={pkg.name}
-                  subheader={pkg.description}
-                  titleTypographyProps={{ align: 'center', variant: 'h5', color: 'primary.main' }}
-                  subheaderTypographyProps={{ align: 'center' }}
+                  titleTypographyProps={{ align: 'center', variant: 'h5', color: 'primary.main', fontWeight: '600' }}
                   sx={{ bgcolor: 'grey[50]' }}
                 />
-                {/* flexGrow: 1 để nội dung card chiếm hết không gian còn lại */}
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', mb: 2 }}>
                     <Typography component="h2" variant="h4" color="text.primary">
-                      {new Intl.NumberFormat('vi-VN').format(pkg.price)}
+                      {/* SỬA LỖI: Dùng pkg.package_price thay vì pkg.price */}
+                      {new Intl.NumberFormat('vi-VN').format(pkg.package_price)}
                     </Typography>
                     <Typography variant="h6" color="text.secondary">
                       &nbsp;VNĐ
                     </Typography>
                   </Box>
                   <List dense>
-                    {pkg.features.map((line) => (
-                      <ListItem key={line} disableGutters>
+                    {/* SỬA LỖI: Tách các tính năng từ trường description */}
+                    {pkg.description.split(' + ').map((feature) => (
+                      <ListItem key={feature} disableGutters>
                         <ListItemIcon sx={{ minWidth: 32 }}>
-                          <CheckCircleIcon color="primary" fontSize="small" />
+                          <CheckCircleOutlineIcon color="primary" fontSize="small" />
                         </ListItemIcon>
-                        <ListItemText primary={line} />
+                        <ListItemText primary={feature} />
                       </ListItem>
                     ))}
                   </List>
                 </CardContent>
-                <CardActions>
+                <CardActions sx={{ px: 2, pb: 2 }}>
                   <Button fullWidth variant="contained">
                     Chọn gói này
                   </Button>
