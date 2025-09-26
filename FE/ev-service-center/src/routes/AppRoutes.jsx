@@ -2,22 +2,23 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PublicLayout from '../layouts/PublicLayout';
 import AdminLayout from '../layouts/AdminLayout';
-import ServiceCenterListPage from '../pages/public/ServiceCenterListPage';
+
 import LoginPage from '../pages/auth/LoginPage';
 import CustomerDashboardPage from '../pages/customer/CustomerDashboardPage';
 import ServicesPage from '../pages/public/ServicesPage';
 import { Container, Typography } from '@mui/material'; 
-
+//import VehicleList from '../pages/customer/VehicleList';
+import AppointmentList from '../pages/customer/AppointmentList'
 function AppRoutes() {
   return (
     <Routes>
-      {/* Trang Login không dùng layout chung */}
+     
       
 
       {/* ===== Luồng Public ===== */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/centers" element={<ServiceCenterListPage />} />
+        
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Route>
@@ -26,6 +27,8 @@ function AppRoutes() {
       {/* [Suy luận] Tạm thời dùng PublicLayout, sau này có thể đổi thành CustomerLayout */}
       <Route path="/customer" element={<PublicLayout />}>
         <Route path="dashboard" element={<CustomerDashboardPage />} />
+        
+        <Route path="appointment-list" element={<AppointmentList />} />
         {/* Thêm các trang khác của customer ở đây, vd: /customer/vehicles */}
       </Route>
 

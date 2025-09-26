@@ -99,6 +99,10 @@ export const getSubscriptionById = (id) => api.get(`/subscriptions/${id}`);
 export const createSubscription = (subData) => api.post('/subscriptions', subData);
 export const updateSubscription = (id, subData) => api.put(`/subscriptions/${id}`, subData);
 export const deleteSubscription = (id) => api.delete(`/subscriptions/${id}`);
+export const getUserAppointments = (userId) => {
+ 
+  return api.get(`/bookings?customer_id=${userId}&_expand=quotation`);
+};
 
 // ===================================
 // 9. Checklist Items API (Đổi tên key trong JSON thành "checklist-items")

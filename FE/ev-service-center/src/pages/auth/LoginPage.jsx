@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../api/apiService';
+import { useAuth } from '../../hooks/useAuth'; // SỬ DỤNG CUSTOM HOOK
 import { Box, TextField, Button, Typography, Paper, Alert, Container } from '@mui/material';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('customer1@test.com'); // Thêm sẵn để test
+  const [password, setPassword] = useState('123456'); // Thêm sẵn để test
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth(); // Lấy hàm login từ context
 
   const handleLogin = async (event) => {
     event.preventDefault();
     setError('');
     try {
-      const response = await login(email, password);
-      alert('Đăng nhập thành công!');
-      navigate('/customer/dashboard');
+      await login(email, password); // Gọi hàm login từ context
+      navigate('/customer/dashboard'); // Điều hướng sau khi thành công
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    // Sử dụng Box với flexbox để căn giữa nội dung theo cả chiều dọc và ngang
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        // Đảm bảo chiếm đủ chiều cao còn lại của màn hình (trừ đi Header và Footer)
         minHeight: 'calc(100vh - 200px)', 
         py: 4,
       }}
