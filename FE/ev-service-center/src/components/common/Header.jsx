@@ -80,7 +80,7 @@ function Header() {
         {/* Navigation Links */}
         <Box sx={{ flexGrow: 1, ml: 4 }}>
           <Button component={NavLink} to="/services" color="white">Dịch vụ</Button>
-          <Button component={NavLink} to="/centers" color="white">Trung tâm</Button>
+          <Button component={NavLink} to="/about" color="white">Về Trung tâm</Button>
         </Box>
 
         {/* Auth Buttons */}

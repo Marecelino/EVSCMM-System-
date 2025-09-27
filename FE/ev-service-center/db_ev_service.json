@@ -1,10 +1,21 @@
-
 {
   "roles": [
-    { "id": 1, "role_name": "customer" },
-    { "id": 2, "role_name": "staff" },
-    { "id": 3, "role_name": "technician" },
-    { "id": 4, "role_name": "admin" }
+    {
+      "id": 1,
+      "role_name": "customer"
+    },
+    {
+      "id": 2,
+      "role_name": "staff"
+    },
+    {
+      "id": 3,
+      "role_name": "technician"
+    },
+    {
+      "id": 4,
+      "role_name": "admin"
+    }
   ],
   "users": [
     {
@@ -53,84 +64,463 @@
       "id": 1,
       "owner_id": 1,
       "vin_number": "1HGBH41JXMN109186",
-      "license_plate": "51A-12345",
+      "license_plate": "51A-123.45",
       "model": "VF8",
       "brand": "VinFast",
-      "year": 2023
+      "year": 2023,
+      "odometer_km": 18000
+    },
+    {
+      "id": 2,
+      "owner_id": 1,
+      "vin_number": "1GJJ34HJKH34",
+      "license_plate": "50X1-157.44",
+      "model": "Model 3",
+      "brand": "Tesla",
+      "year": 2023,
+      "odometer_km": 14000
+    },
+    {
+      "brand": "",
+      "model": "",
+      "year": "",
+      "license_plate": "",
+      "vin_number": "",
+      "odometer_km": "",
+      "owner_id": 1,
+      "id": 3
     }
   ],
   "service_types": [
-    { "id": 1, "name": "Basic EV Checkup", "description": "General EV system inspection", "category": "maintenance", "est_duration_minutes": 60, "base_price": 200000, "requires_parts": false },
-    { "id": 2, "name": "Battery Health Check", "description": "Comprehensive battery diagnostics", "category": "maintenance", "est_duration_minutes": 90, "base_price": 350000, "requires_parts": false },
-    { "id": 3, "name": "Tire Replacement", "description": "Replace one EV tire", "category": "repair", "est_duration_minutes": 45, "base_price": 150000, "requires_parts": true },
-    { "id": 4, "name": "Brake Service", "description": "EV brake system service", "category": "maintenance", "est_duration_minutes": 90, "base_price": 280000, "requires_parts": true },
-    { "id": 5, "name": "Software Update & Calibration", "description": "Update onboard software and calibrate sensors", "category": "maintenance", "est_duration_minutes": 75, "base_price": 250000, "requires_parts": false },
-    { "id": 6, "name": "AC System Service", "description": "Check and recharge AC system", "category": "maintenance", "est_duration_minutes": 60, "base_price": 300000, "requires_parts": true },
-    { "id": 7, "name": "Wheel Alignment", "description": "Adjust wheel angles for optimal driving", "category": "maintenance", "est_duration_minutes": 60, "base_price": 400000, "requires_parts": false },
-    { "id": 8, "name": "Drive Unit Fluid Change", "description": "Replace fluid for the electric drive unit", "category": "maintenance", "est_duration_minutes": 45, "base_price": 500000, "requires_parts": true },
-    { "id": 9, "name": "Charging Port Repair", "description": "Repair or replace faulty charging port", "category": "repair", "est_duration_minutes": 120, "base_price": 700000, "requires_parts": true },
-    { "id": 10, "name": "Suspension Check", "description": "Inspect shocks, struts, and suspension components", "category": "inspection", "est_duration_minutes": 45, "base_price": 150000, "requires_parts": false },
-    { "id": 11, "name": "Paint Touch-up", "description": "Fix minor scratches and paint chips", "category": "cosmetic", "est_duration_minutes": 180, "base_price": 1000000, "requires_parts": true },
-    { "id": 12, "name": "Headlight Restoration", "description": "Polish and restore faded headlights", "category": "cosmetic", "est_duration_minutes": 60, "base_price": 450000, "requires_parts": false },
-    { "id": 13, "name": "12V Battery Replacement", "description": "Replace the 12V auxiliary battery", "category": "repair", "est_duration_minutes": 30, "base_price": 100000, "requires_parts": true },
-    { "id": 14, "name": "Full Vehicle Diagnostic", "description": "Comprehensive electronic and mechanical diagnostic", "category": "inspection", "est_duration_minutes": 120, "base_price": 500000, "requires_parts": false }
+    {
+      "id": 1,
+      "name": "Basic EV Checkup",
+      "description": "General EV system inspection",
+      "category": "maintenance",
+      "est_duration_minutes": 60,
+      "base_price": 200000,
+      "requires_parts": false
+    },
+    {
+      "id": 2,
+      "name": "Battery Health Check",
+      "description": "Comprehensive battery diagnostics",
+      "category": "maintenance",
+      "est_duration_minutes": 90,
+      "base_price": 350000,
+      "requires_parts": false
+    },
+    {
+      "id": 3,
+      "name": "Tire Replacement",
+      "description": "Replace one EV tire",
+      "category": "repair",
+      "est_duration_minutes": 45,
+      "base_price": 150000,
+      "requires_parts": true
+    },
+    {
+      "id": 4,
+      "name": "Brake Service",
+      "description": "EV brake system service",
+      "category": "maintenance",
+      "est_duration_minutes": 90,
+      "base_price": 280000,
+      "requires_parts": true
+    },
+    {
+      "id": 5,
+      "name": "Software Update & Calibration",
+      "description": "Update onboard software and calibrate sensors",
+      "category": "maintenance",
+      "est_duration_minutes": 75,
+      "base_price": 250000,
+      "requires_parts": false
+    },
+    {
+      "id": 6,
+      "name": "AC System Service",
+      "description": "Check and recharge AC system",
+      "category": "maintenance",
+      "est_duration_minutes": 60,
+      "base_price": 300000,
+      "requires_parts": true
+    },
+    {
+      "id": 7,
+      "name": "Wheel Alignment",
+      "description": "Adjust wheel angles for optimal driving",
+      "category": "maintenance",
+      "est_duration_minutes": 60,
+      "base_price": 400000,
+      "requires_parts": false
+    },
+    {
+      "id": 8,
+      "name": "Drive Unit Fluid Change",
+      "description": "Replace fluid for the electric drive unit",
+      "category": "maintenance",
+      "est_duration_minutes": 45,
+      "base_price": 500000,
+      "requires_parts": true
+    },
+    {
+      "id": 9,
+      "name": "Charging Port Repair",
+      "description": "Repair or replace faulty charging port",
+      "category": "repair",
+      "est_duration_minutes": 120,
+      "base_price": 700000,
+      "requires_parts": true
+    },
+    {
+      "id": 10,
+      "name": "Suspension Check",
+      "description": "Inspect shocks, struts, and suspension components",
+      "category": "inspection",
+      "est_duration_minutes": 45,
+      "base_price": 150000,
+      "requires_parts": false
+    },
+    {
+      "id": 11,
+      "name": "Paint Touch-up",
+      "description": "Fix minor scratches and paint chips",
+      "category": "cosmetic",
+      "est_duration_minutes": 180,
+      "base_price": 1000000,
+      "requires_parts": true
+    },
+    {
+      "id": 12,
+      "name": "Headlight Restoration",
+      "description": "Polish and restore faded headlights",
+      "category": "cosmetic",
+      "est_duration_minutes": 60,
+      "base_price": 450000,
+      "requires_parts": false
+    },
+    {
+      "id": 13,
+      "name": "12V Battery Replacement",
+      "description": "Replace the 12V auxiliary battery",
+      "category": "repair",
+      "est_duration_minutes": 30,
+      "base_price": 100000,
+      "requires_parts": true
+    },
+    {
+      "id": 14,
+      "name": "Full Vehicle Diagnostic",
+      "description": "Comprehensive electronic and mechanical diagnostic",
+      "category": "inspection",
+      "est_duration_minutes": 120,
+      "base_price": 500000,
+      "requires_parts": false
+    }
   ],
   "service-packages": [
-    { "id": 1, "name": "Basic Care Package", "description": "Basic EV Checkup + Battery Health Check", "package_price": 500000, "estimated_duration_minutes": 150, "is_active": true },
-    { "id": 2, "name": "Premium Care Package", "description": "Complete EV maintenance package including Brake Service", "package_price": 850000, "estimated_duration_minutes": 240, "is_active": true },
-    { "id": 3, "name": "Seasonal Prep Package", "description": "AC System Service + Tire check", "package_price": 450000, "estimated_duration_minutes": 120, "is_active": true },
-    { "id": 4, "name": "Long Trip Assurance", "description": "Full Vehicle Diagnostic + Wheel Alignment", "package_price": 800000, "estimated_duration_minutes": 180, "is_active": true },
-    { "id": 5, "name": "Performance Tune-up", "description": "Software Update & Calibration + Drive Unit Fluid Change", "package_price": 700000, "estimated_duration_minutes": 120, "is_active": true },
-    { "id": 6, "name": "Safety First Package", "description": "Brake Service + Suspension Check", "package_price": 400000, "estimated_duration_minutes": 135, "is_active": true },
-    { "id": 7, "name": "Cosmetic Refresh", "description": "Paint Touch-up + Headlight Restoration", "package_price": 1300000, "estimated_duration_minutes": 240, "is_active": true },
-    { "id": 8, "name": "Battery & Power Essential", "description": "Battery Health Check + 12V Battery Replacement", "package_price": 420000, "estimated_duration_minutes": 120, "is_active": true },
-    { "id": 9, "name": "Pre-owned Vehicle Inspection", "description": "Full Vehicle Diagnostic for pre-owned cars", "package_price": 450000, "estimated_duration_minutes": 120, "is_active": true },
-    { "id": 10, "name": "Annual Overhaul", "description": "Premium Care Package + Wheel Alignment + AC Service", "package_price": 1400000, "estimated_duration_minutes": 360, "is_active": true },
-    { "id": 11, "name": "Tire Care Package", "description": "Tire Replacement (4 wheels) + Wheel Alignment", "package_price": 900000, "estimated_duration_minutes": 240, "is_active": true },
-    { "id": 12, "name": "Electronics & Software Package", "description": "Full Vehicle Diagnostic + Software Update & Calibration", "package_price": 700000, "estimated_duration_minutes": 195, "is_active": true }
+    {
+      "id": 1,
+      "name": "Basic Care Package",
+      "description": "Basic EV Checkup + Battery Health Check",
+      "package_price": 500000,
+      "estimated_duration_minutes": 150,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Premium Care Package",
+      "description": "Complete EV maintenance package including Brake Service",
+      "package_price": 850000,
+      "estimated_duration_minutes": 240,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "Seasonal Prep Package",
+      "description": "AC System Service + Tire check",
+      "package_price": 450000,
+      "estimated_duration_minutes": 120,
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "name": "Long Trip Assurance",
+      "description": "Full Vehicle Diagnostic + Wheel Alignment",
+      "package_price": 800000,
+      "estimated_duration_minutes": 180,
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "name": "Performance Tune-up",
+      "description": "Software Update & Calibration + Drive Unit Fluid Change",
+      "package_price": 700000,
+      "estimated_duration_minutes": 120,
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "name": "Safety First Package",
+      "description": "Brake Service + Suspension Check",
+      "package_price": 400000,
+      "estimated_duration_minutes": 135,
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "name": "Cosmetic Refresh",
+      "description": "Paint Touch-up + Headlight Restoration",
+      "package_price": 1300000,
+      "estimated_duration_minutes": 240,
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "name": "Battery & Power Essential",
+      "description": "Battery Health Check + 12V Battery Replacement",
+      "package_price": 420000,
+      "estimated_duration_minutes": 120,
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "name": "Pre-owned Vehicle Inspection",
+      "description": "Full Vehicle Diagnostic for pre-owned cars",
+      "package_price": 450000,
+      "estimated_duration_minutes": 120,
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "name": "Annual Overhaul",
+      "description": "Premium Care Package + Wheel Alignment + AC Service",
+      "package_price": 1400000,
+      "estimated_duration_minutes": 360,
+      "is_active": true
+    },
+    {
+      "id": 11,
+      "name": "Tire Care Package",
+      "description": "Tire Replacement (4 wheels) + Wheel Alignment",
+      "package_price": 900000,
+      "estimated_duration_minutes": 240,
+      "is_active": true
+    },
+    {
+      "id": 12,
+      "name": "Electronics & Software Package",
+      "description": "Full Vehicle Diagnostic + Software Update & Calibration",
+      "package_price": 700000,
+      "estimated_duration_minutes": 195,
+      "is_active": true
+    }
   ],
   "package-services": [
-    { "id": 1, "package_id": 1, "service_type_id": 1, "quantity": 1 },
-    { "id": 2, "package_id": 1, "service_type_id": 2, "quantity": 1 },
-    { "id": 3, "package_id": 2, "service_type_id": 1, "quantity": 1 },
-    { "id": 4, "package_id": 2, "service_type_id": 2, "quantity": 1 },
-    { "id": 5, "package_id": 2, "service_type_id": 4, "quantity": 1 },
-    { "id": 6, "package_id": 3, "service_type_id": 6, "quantity": 1 },
-    { "id": 7, "package_id": 3, "service_type_id": 10, "quantity": 1 },
-    { "id": 8, "package_id": 4, "service_type_id": 14, "quantity": 1 },
-    { "id": 9, "package_id": 4, "service_type_id": 7, "quantity": 1 },
-    { "id": 10, "package_id": 5, "service_type_id": 5, "quantity": 1 },
-    { "id": 11, "package_id": 5, "service_type_id": 8, "quantity": 1 },
-    { "id": 12, "package_id": 6, "service_type_id": 4, "quantity": 1 },
-    { "id": 13, "package_id": 6, "service_type_id": 10, "quantity": 1 },
-    { "id": 14, "package_id": 7, "service_type_id": 11, "quantity": 1 },
-    { "id": 15, "package_id": 7, "service_type_id": 12, "quantity": 1 },
-    { "id": 16, "package_id": 8, "service_type_id": 2, "quantity": 1 },
-    { "id": 17, "package_id": 8, "service_type_id": 13, "quantity": 1 },
-    { "id": 18, "package_id": 9, "service_type_id": 14, "quantity": 1 },
-    { "id": 19, "package_id": 10, "service_type_id": 2, "quantity": 1 },
-    { "id": 20, "package_id": 10, "service_type_id": 4, "quantity": 1 },
-    { "id": 21, "package_id": 10, "service_type_id": 6, "quantity": 1 },
-    { "id": 22, "package_id": 10, "service_type_id": 7, "quantity": 1 },
-    { "id": 23, "package_id": 11, "service_type_id": 3, "quantity": 4 },
-    { "id": 24, "package_id": 11, "service_type_id": 7, "quantity": 1 },
-    { "id": 25, "package_id": 12, "service_type_id": 14, "quantity": 1 },
-    { "id": 26, "package_id": 12, "service_type_id": 5, "quantity": 1 }
+    {
+      "id": 1,
+      "package_id": 1,
+      "service_type_id": 1,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "package_id": 1,
+      "service_type_id": 2,
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "package_id": 2,
+      "service_type_id": 1,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "package_id": 2,
+      "service_type_id": 2,
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "package_id": 2,
+      "service_type_id": 4,
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "package_id": 3,
+      "service_type_id": 6,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "package_id": 3,
+      "service_type_id": 10,
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "package_id": 4,
+      "service_type_id": 14,
+      "quantity": 1
+    },
+    {
+      "id": 9,
+      "package_id": 4,
+      "service_type_id": 7,
+      "quantity": 1
+    },
+    {
+      "id": 10,
+      "package_id": 5,
+      "service_type_id": 5,
+      "quantity": 1
+    },
+    {
+      "id": 11,
+      "package_id": 5,
+      "service_type_id": 8,
+      "quantity": 1
+    },
+    {
+      "id": 12,
+      "package_id": 6,
+      "service_type_id": 4,
+      "quantity": 1
+    },
+    {
+      "id": 13,
+      "package_id": 6,
+      "service_type_id": 10,
+      "quantity": 1
+    },
+    {
+      "id": 14,
+      "package_id": 7,
+      "service_type_id": 11,
+      "quantity": 1
+    },
+    {
+      "id": 15,
+      "package_id": 7,
+      "service_type_id": 12,
+      "quantity": 1
+    },
+    {
+      "id": 16,
+      "package_id": 8,
+      "service_type_id": 2,
+      "quantity": 1
+    },
+    {
+      "id": 17,
+      "package_id": 8,
+      "service_type_id": 13,
+      "quantity": 1
+    },
+    {
+      "id": 18,
+      "package_id": 9,
+      "service_type_id": 14,
+      "quantity": 1
+    },
+    {
+      "id": 19,
+      "package_id": 10,
+      "service_type_id": 2,
+      "quantity": 1
+    },
+    {
+      "id": 20,
+      "package_id": 10,
+      "service_type_id": 4,
+      "quantity": 1
+    },
+    {
+      "id": 21,
+      "package_id": 10,
+      "service_type_id": 6,
+      "quantity": 1
+    },
+    {
+      "id": 22,
+      "package_id": 10,
+      "service_type_id": 7,
+      "quantity": 1
+    },
+    {
+      "id": 23,
+      "package_id": 11,
+      "service_type_id": 3,
+      "quantity": 4
+    },
+    {
+      "id": 24,
+      "package_id": 11,
+      "service_type_id": 7,
+      "quantity": 1
+    },
+    {
+      "id": 25,
+      "package_id": 12,
+      "service_type_id": 14,
+      "quantity": 1
+    },
+    {
+      "id": 26,
+      "package_id": 12,
+      "service_type_id": 5,
+      "quantity": 1
+    }
   ],
   "parts": [
-    { "id": 1, "part_number": "TIRE-EV-001", "name": "EV Tire 18 inch", "category": "tire", "unit_price": 2500000, "current_stock": 20, "min_stock_level": 4 },
-    { "id": 2, "part_number": "BRAKE-PAD-001", "name": "EV Brake Pads", "category": "brake", "unit_price": 850000, "current_stock": 15, "min_stock_level": 6 },
-    { "id": 3, "part_number": "COOLANT-001", "name": "EV Battery Coolant", "category": "battery", "unit_price": 180000, "current_stock": 25, "min_stock_level": 8 },
-    { "id": 4, "part_number": "FILTER-CABIN-01", "name": "Cabin Air Filter HEPA", "category": "filter", "unit_price": 450000, "current_stock": 30, "min_stock_level": 10 },
-    { "id": 5, "part_number": "WIPER-SET-VF8", "name": "Wiper Blade Set for VF8", "category": "exterior", "unit_price": 350000, "current_stock": 22, "min_stock_level": 5 },
-    { "id": 6, "part_number": "BAT-AUX-12V", "name": "12V Auxiliary Battery", "category": "battery", "unit_price": 1200000, "current_stock": 10, "min_stock_level": 3 },
-    { "id": 7, "part_number": "FLUID-BRAKE-DOT4", "name": "Brake Fluid DOT4 1L", "category": "fluid", "unit_price": 250000, "current_stock": 40, "min_stock_level": 10 },
-    { "id": 8, "part_number": "SENSOR-TPMS-01", "name": "Tire Pressure Sensor (TPMS)", "category": "sensor", "unit_price": 600000, "current_stock": 50, "min_stock_level": 15 },
-    { "id": 9, "part_number": "BULB-LED-H7", "name": "Headlight Bulb LED H7", "category": "lighting", "unit_price": 750000, "current_stock": 18, "min_stock_level": 5 },
-    { "id": 10, "part_number": "LATCH-CHARGE-PORT", "name": "Charging Port Latch Assembly", "category": "charging", "unit_price": 950000, "current_stock": 8, "min_stock_level": 2 },
-    { "id": 11, "part_number": "FLUID-DRIVE-UNIT", "name": "Drive Unit Fluid 1L", "category": "fluid", "unit_price": 480000, "current_stock": 12, "min_stock_level": 5 },
-    { "id": 12, "part_number": "BUSHING-FR-SUSP", "name": "Front Suspension Bushing Kit", "category": "suspension", "unit_price": 1100000, "current_stock": 14, "min_stock_level": 4 },
-    { "id": 13, "part_number": "FLUID-WASHER-01", "name": "Windshield Washer Fluid 2L", "category": "fluid", "unit_price": 50000, "current_stock": 100, "min_stock_level": 20 }
+    {
+      "id": 1,
+      "part_number": "TIRE-EV-001",
+      "name": "EV Tire 18 inch",
+      "category": "tire",
+      "unit_price": 2500000,
+      "current_stock": 20,
+      "min_stock_level": 4
+    },
+    {
+      "id": 2,
+      "part_number": "BRAKE-PAD-001",
+      "name": "EV Brake Pads",
+      "category": "brake",
+      "unit_price": 850000,
+      "current_stock": 15,
+      "min_stock_level": 6
+    },
+    {
+      "id": 3,
+      "part_number": "COOLANT-001",
+      "name": "EV Battery Coolant",
+      "category": "battery",
+      "unit_price": 180000,
+      "current_stock": 25,
+      "min_stock_level": 8
+    },
+    {
+      "id": 4,
+      "part_number": "FILTER-CABIN-01",
+      "name": "Cabin Air Filter HEPA",
+      "category": "filter",
+      "unit_price": 450000,
+      "current_stock": 30,
+      "min_stock_level": 10
+    },
+    {
+      "id": 5,
+      "part_number": "WIPER-SET-VF8",
+      "name": "Wiper Blade Set for VF8",
+      "category": "exterior",
+      "unit_price": 350000,
+      "current_stock": 22,
+      "min_stock_level": 5
+    }
   ],
   "customer-inquiries": [
     {
@@ -138,12 +528,20 @@
       "customer_id": 1,
       "vehicle_id": 1,
       "inquiry_type": "package_booking",
-      "title": "Yêu cầu đặt gói bảo dưỡng Premium",
-      "description": "Tôi muốn đặt gói Premium Care Package cho xe VF8 của tôi vào tuần tới.",
-      "status": "quoted",
+      "title": "Yêu cầu đặt gói bảo dưỡng Premium cho xe VF8",
+      "status": "closed",
       "assigned_staff_id": 2,
-      "created_at": "2025-09-25T14:00:00Z",
-      "updated_at": "2025-09-25T15:30:00Z"
+      "created_at": "2025-09-25T14:00:00Z"
+    },
+    {
+      "id": 2,
+      "customer_id": 1,
+      "vehicle_id": 2,
+      "inquiry_type": "consultation",
+      "title": "Tư vấn về tiếng kêu ở phanh xe Tesla",
+      "status": "closed",
+      "assigned_staff_id": 2,
+      "created_at": "2025-09-20T11:00:00Z"
     }
   ],
   "quotations": [
@@ -152,31 +550,23 @@
       "inquiry_id": 1,
       "customer_id": 1,
       "vehicle_id": 1,
-      "quotation_type": "package",
       "package_id": 2,
-      "labor_cost": 0,
-      "estimated_duration_minutes": 240,
-      "subtotal": 850000,
-      "tax_amount": 85000,
       "total_amount": 935000,
-      "deposit_required": true,
-      "deposit_amount": 200000,
       "status": "approved",
-      "valid_until": "2025-10-02",
       "created_by_staff_id": 2,
-      "created_at": "2025-09-25T15:30:00Z",
-      "customer_approved_at": "2025-09-26T09:00:00Z"
+      "created_at": "2025-09-25T15:30:00Z"
+    },
+    {
+      "id": 2,
+      "inquiry_id": 2,
+      "customer_id": 1,
+      "vehicle_id": 2,
+      "package_id": null,
+      "total_amount": 280000,
+      "status": "approved",
+      "created_by_staff_id": 2,
+      "created_at": "2025-09-20T11:30:00Z"
     }
-  ],
-  "shifts": [
-    { "id": 1, "technician_id": 3, "shift_date": "2025-09-29", "start_time": "08:00:00", "end_time": "17:00:00", "total_slots": 8 }
-  ],
-  "shift-slots": [
-    { "id": 1, "shift_id": 1, "slot_number": 1, "slot_start": "2025-09-29T08:00:00Z", "slot_end": "2025-09-29T09:00:00Z", "status": "booked" },
-    { "id": 2, "shift_id": 1, "slot_number": 2, "slot_start": "2025-09-29T09:00:00Z", "slot_end": "2025-09-29T10:00:00Z", "status": "booked" },
-    { "id": 3, "shift_id": 1, "slot_number": 3, "slot_start": "2025-09-29T10:00:00Z", "slot_end": "2025-09-29T11:00:00Z", "status": "booked" },
-    { "id": 4, "shift_id": 1, "slot_number": 4, "slot_start": "2025-09-29T11:00:00Z", "slot_end": "2025-09-29T12:00:00Z", "status": "booked" },
-    { "id": 5, "shift_id": 1, "slot_number": 5, "slot_start": "2025-09-29T13:00:00Z", "slot_end": "2025-09-29T14:00:00Z", "status": "available" }
   ],
   "bookings": [
     {
@@ -184,78 +574,16 @@
       "quotation_id": 1,
       "customer_id": 1,
       "vehicle_id": 1,
-      "booking_type": "online",
-      "requested_datetime": "2025-09-29T08:00:00Z",
-      "estimated_duration_minutes": 240,
-      "slot_id": 1,
-      "assigned_technician_id": 3,
-      "assigned_by_staff_id": 2,
-      "assigned_at": "2025-09-26T10:00:00Z",
+      "status": "completed",
+      "requested_datetime": "2025-09-29T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "quotation_id": 2,
+      "customer_id": 1,
+      "vehicle_id": 2,
       "status": "confirmed",
-      "deposit_required": true,
-      "deposit_amount": 200000,
-      "deposit_paid": true,
-      "deposit_paid_at": "2025-09-26T09:05:00Z",
-      "total_quoted_amount": 935000,
-      "created_at": "2025-09-26T09:10:00Z"
+      "requested_datetime": "2025-10-05T14:00:00Z"
     }
-  ],
-  "service-orders": [
-    {
-      "id": 1,
-      "booking_id": 1,
-      "technician_id": 3,
-      "status": "in_progress",
-      "check_in_time": "2025-09-29T07:55:00Z",
-      "work_started_at": "2025-09-29T08:05:00Z",
-      "work_completed_at": null,
-      "check_out_time": null,
-      "labor_cost": 0,
-      "parts_cost": 0,
-      "additional_charges": 0,
-      "total_cost": 0,
-      "technician_notes": "Bắt đầu thực hiện gói Premium Care.",
-      "customer_feedback": null,
-      "quality_checked_by": null
-    }
-  ],
-  "part-requests": [
-    {
-      "id": 1,
-      "order_id": 1,
-      "part_id": 2,
-      "technician_id": 3,
-      "approved_by_staff_id": 2,
-      "quantity_requested": 4,
-      "quantity_approved": 4,
-      "quantity_used": 0,
-      "unit_cost": 850000,
-      "total_cost": 0,
-      "status": "approved",
-      "request_reason": "Má phanh mòn, cần thay thế cho cả 4 bánh.",
-      "rejection_reason": null,
-      "requested_at": "2025-09-29T08:30:00Z",
-      "approved_at": "2025-09-29T08:35:00Z",
-      "used_at": null
-    }
-  ],
-  "ev_checklist_templates": [
-      { "id": 1, "template_name": "Standard EV Maintenance Checklist", "service_type_id": null, "package_id": 2, "is_default": true }
-  ],
-  "checklist_items": [
-      { "id": 1, "template_id": 1, "item_name": "Battery voltage check", "category": "battery", "is_mandatory": true, "is_critical": true, "display_order": 1 },
-      { "id": 2, "template_id": 1, "item_name": "Battery temperature check", "category": "battery", "is_mandatory": true, "is_critical": true, "display_order": 2 },
-      { "id": 3, "template_id": 1, "item_name": "Brake system check", "category": "safety", "is_mandatory": true, "is_critical": true, "display_order": 3 }
-  ],
-  "order-checklists": [
-      { "id": 1, "order_id": 1, "checklist_item_id": 1, "status": "ok", "before_value": "400V", "after_value": "400V", "notes": null, "checked_by_technician_id": 3, "checked_at": "2025-09-29T08:15:00Z" },
-      { "id": 2, "order_id": 1, "checklist_item_id": 2, "status": "pending", "before_value": null, "after_value": null, "notes": null, "checked_by_technician_id": null, "checked_at": null },
-      { "id": 3, "order_id": 1, "checklist_item_id": 3, "status": "pending", "before_value": null, "after_value": null, "notes": null, "checked_by_technician_id": null, "checked_at": null }
-  ],
-  "invoices": [
-      { "id": 1, "booking_id": 1, "order_id": null, "customer_id": 1, "invoice_type": "deposit", "invoice_number": "INV-DEP-001", "subtotal": 200000, "tax_amount": 0, "discount_amount": 0, "total_amount": 200000, "issue_date": "2025-09-26T09:05:00Z", "due_date": "2025-09-26", "status": "paid" }
-  ],
-  "payments": [
-      { "id": 1, "invoice_id": 1, "customer_id": 1, "amount": 200000, "payment_method": "Credit Card", "payment_reference": "CHG_123ABC456", "payment_type": "deposit", "status": "completed", "processed_by_staff_id": 2, "payment_date": "2025-09-26T09:05:10Z" }
   ]
 }

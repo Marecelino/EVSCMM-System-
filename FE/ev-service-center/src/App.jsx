@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
-
+import { AuthProvider } from './contexts/AuthProvider';
 function App() {
   return (
-    // Component này có nhiệm vụ "bật" chức năng routing cho toàn bộ ứng dụng
+    <AuthProvider>
+   
     <BrowserRouter>
       {/* Component AppRoutes chứa tất cả các định nghĩa về đường dẫn */}
       <AppRoutes />
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

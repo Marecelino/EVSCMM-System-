@@ -45,7 +45,9 @@ export const getVehicleById = (id) => api.get(`/vehicles/${id}`);
 export const createVehicle = (vehicleData) => api.post('/vehicles', vehicleData);
 export const updateVehicle = (id, vehicleData) => api.put(`/vehicles/${id}`, vehicleData);
 export const deleteVehicle = (id) => api.delete(`/vehicles/${id}`);
-
+export const getVehiclesByOwner = (ownerId) => {
+  return api.get(`/vehicles?owner_id=${ownerId}`);
+};
 // ===================================
 // 3. Bookings API
 // ===================================
@@ -100,7 +102,6 @@ export const createSubscription = (subData) => api.post('/subscriptions', subDat
 export const updateSubscription = (id, subData) => api.put(`/subscriptions/${id}`, subData);
 export const deleteSubscription = (id) => api.delete(`/subscriptions/${id}`);
 export const getUserAppointments = (userId) => {
- 
   return api.get(`/bookings?customer_id=${userId}&_expand=quotation`);
 };
 

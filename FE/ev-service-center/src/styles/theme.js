@@ -1,18 +1,17 @@
 import { createTheme } from '@mui/material/styles';
 
-// [Suy luận] Dựa trên các thương hiệu EV, chúng ta sẽ dùng màu xanh dương
-// làm màu chủ đạo để thể hiện sự tin cậy, công nghệ và thân thiện môi trường.
+
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#005B96', // Một màu xanh dương đậm, chuyên nghiệp
+      main: '#005B96', 
     },
     secondary: {
-      main: '#B2B2B2', // Màu xám nhạt cho các yếu tố phụ
+      main: '#B2B2B2', 
     },
     background: {
-      default: '#F4F6F8', // Màu nền xám rất nhạt, tạo cảm giác sạch sẽ
-      paper: '#FFFFFF', // Màu nền của các card, component
+      default: '#F4F6F8', 
+      paper: '#FFFFFF',
     },
   },
   typography: {
